@@ -1,0 +1,9 @@
+.pagination {
+  &__list {
+    display: flex;
+    gap: 36px;
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-primary;
+  }
+}
