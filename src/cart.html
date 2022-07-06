@@ -12,7 +12,7 @@
 <body>
   <header class="header">
     <h1 class="visually-hidden">Techno shop- Онлайн магазин</h1>
-    <div class="container">
+    <div class="container header__container">
 
       <a href="/">
         <img src="img/logo.svg" alt="Логотип Techno Shop" class="header__logo">
@@ -50,15 +50,15 @@
   </header>
   <main class="main">
     <section class="cart">
-      <h2 class="visually-hidden">Корзина</h2>
+      <h2 class="visually-hidden">Оформление заказа</h2>
       <div class="container cart__container">
 
         <section class="cart-goods">
-          <h3 class="cart-goods__title">Корзина</h3>
+          <h3 class="cart__title cart-goods__title">Корзина</h3>
           <ul class="cart-goods__list">
             <li class="cart-goods__item item">
               <img src="img/cart-monitor.jpg" alt="" class="item__img">
-              <div class="item__detalil">
+              <div class="item__detail">
                 <h4 class="item__title">Монитор AOC 24G2U/BK</h4>
                 <p class="item__wendor-code">Артикул: 654651968</p>
               </div>
@@ -73,7 +73,7 @@
 
                 <p class="item__price">20799 ₽</p>
 
-                <button class="item__revove-cart" aria-label="Удалить товар из корзины">
+                <button class="item__remove-cart" aria-label="Удалить товар из корзины">
                   <svg>
                     <use href="#remove" />
                   </svg>
@@ -83,7 +83,7 @@
 
             <li class="cart-goods__item item">
               <img src="img/cart-clock.jpg" alt="" class="item__img">
-              <div class="item__detalil">
+              <div class="item__detail">
                 <h4 class="item__title">Смарт-часы CANYON Lollypop</h4>
                 <p class="item__wendor-code">Артикул: 654675757</p>
               </div>
@@ -98,7 +98,7 @@
 
                 <p class="item__price">12479 ₽</p>
 
-                <button class="item__revove-cart" aria-label="Удалить товар из корзины">
+                <button class="item__remove-cart" aria-label="Удалить товар из корзины">
                   <svg>
                     <use href="#remove" />
                   </svg>
@@ -108,7 +108,7 @@
 
             <li class="cart-goods__item item">
               <img src="img/cart-tvbox.jpg" alt="" class="item__img">
-              <div class="item__detalil">
+              <div class="item__detail">
                 <h4 class="item__title">Смарт-приставка Selenga R1</h4>
                 <p class="item__wendor-code">Артикул: 724651960</p>
               </div>
@@ -123,7 +123,7 @@
 
                 <p class="item__price">7944 ₽</p>
 
-                <button class="item__revove-cart" aria-label="Удалить товар из корзины">
+                <button class="item__remove-cart" aria-label="Удалить товар из корзины">
                   <svg>
                     <use href="#remove" />
                   </svg>
@@ -133,8 +133,54 @@
           </ul>
         </section>
 
+
+        <section class="cart__total total">
+          <h3 class="visually-hidden">Итоговые данные</h3>
+          <div class="total__wrapper">
+            <ul class="total__table">
+              <li class="total__row total__row_header">
+                <span>Итого</span>
+                <span>41 222 ₽</span>
+              </li>
+
+              <li class="total__row total__row_grey">
+                <span>Товары, 3 шт.</span>
+                <span>41 222 ₽</span>
+              </li>
+
+              <li class="total__row total__row_grey">
+                <span>Скидка</span>
+                <span>0 ₽₽</span>
+              </li>
+              <li class="total__row total__row_grey total__row_gap">
+                <span>Доставка</span>
+                <span>0 ₽</span>
+              </li>
+              <li class="total__row">
+                <span>Дата</span>
+                <span>01 - 03 июля</span>
+              </li>
+              <li class="total__row">
+                <span>Оплата</span>
+                <span>Картой</span>
+              </li>
+            </ul>
+
+            <div class="total__order">
+              <button class="total__submit" aria-label="Оформить заказ">Оформить заказ</button>
+              <label class="total__agree" aria-label="подтвердите согласие с правилами">
+                <input type="checkbox" name="agree" required>
+                <span>Согласен с <a class="total__agree-link" href="">условиями</a> правил пользования торговой
+                  площадкой
+                  и&nbsp;правилами возврата</span>
+              </label>
+            </div>
+          </div>
+
+        </section>
+
         <section class="cart__address address">
-          <h3 class="cart__title">Адрес доставки</h3>
+          <h3 class="cart__title address__title">Адрес доставки</h3>
 
           <form class="address__form">
             <label aria-label="выберите город доставки">
@@ -158,61 +204,21 @@
               <input type="text" placeholder="ФИО" class="address__item">
             </label>
 
-            <label aria-label="введите постовый индекс>
-              <input type=" text" placeholder="Индекс" class="address__item">
+            <label aria-label="введите постовый индекс">
+              <input type="text" placeholder="Индекс" class="address__item">
             </label>
 
             <button class="address__item address__item_btn" aria-label="Сохранить">Сохранить</button>
 
             <label class="address__label-save">
-              <input type="checkbox" name="save-address">Запомнить этот адрес
+              <input class="address__label-check" type="checkbox" name="save-address">Запомнить этот адрес
             </label>
 
           </form>
         </section>
 
 
-        <section class="cart__total total">
-          <h3 class="visually-hidden">Итоговые данные</h3>
 
-          <ul class="total__table">
-            <li class="total__row total__row_header">
-              <span>Итого</span>
-              <span>41 222 ₽</span>
-            </li>
-
-            <li class="total__row total__row_grey">
-              <span>Товары, 3 шт.</span>
-              <span>41 222 ₽</span>
-            </li>
-
-            <li class="total__row total__row_grey">
-              <span>Скидка</span>
-              <span>0 ₽₽</span>
-            </li>
-            <li class="total__row total__row_grey">
-              <span>Доставка</span>
-              <span>0 ₽</span>
-            </li>
-            <li class="total__row">
-              <span>Дата</span>
-              <span>01 - 03 июля</span>
-            </li>
-            <li class="total__row">
-              <span>Оплата</span>
-              <span>Картой</span>
-            </li>
-          </ul>
-
-          <div class="total__order">
-            <button class="total__submit" aria-label="Оформить заказ">Оформить заказ</button>
-            <label class="total__agree" aria-label="подтвердите согласие с правилами">
-              <input type="checkbox" name="agree">
-              <span>Согласен с <a class="total__agree-link" href="">условиями</a> правил пользования торговой площадкой
-                и&nbsp;правилами возврата</span>
-            </label>
-          </div>
-        </section>
 
       </div>
     </section>
@@ -324,11 +330,12 @@
     </div>
   </footer>
 
-  <svg style="display: none" width="20" height="19">
-    <symbol id="remove" viewBox="0 0 20 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <svg style="display: none" width="32" height="33">
+    <symbol id="remove" viewBox="0 0 32 33" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M19.3337 2.04667L17.4537 0.166668L10.0003 7.62L2.54699 0.166668L0.666992 2.04667L8.12033 9.5L0.666992 16.9533L2.54699 18.8333L10.0003 11.38L17.4537 18.8333L19.3337 16.9533L11.8803 9.5L19.3337 2.04667Z" />
-    </symbol>
+        d="M25.3337 9.04667L23.4537 7.16667L16.0003 14.62L8.54699 7.16667L6.66699 9.04667L14.1203 16.5L6.66699 23.9533L8.54699 25.8333L16.0003 18.38L23.4537 25.8333L25.3337 23.9533L17.8803 16.5L25.3337 9.04667Z"
+        </symbol>
+
 
   </svg>
 </body>

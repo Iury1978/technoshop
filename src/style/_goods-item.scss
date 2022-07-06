@@ -7,37 +7,37 @@
   justify-content: space-between;
   gap: 10px;
 
-&__image {
-width: 100%;
-}
+  &__image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
-&__title {
-font-weight: 500;
-font-size: 22px;
-line-height: 27px;
-}
+  &__title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+  }
 
-&__buy {
-display: flex;
-gap: 5px;
-justify-content: space-between;
-align-items: center;
-padding-right: 40px;
-}
+  &__buy {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+  }
 
-&__price {
-font-weight: 700;
-font-size: 22px;
-line-height: 27px;
-}
+  &__price {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+  }
 
-&__to-cart {
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-background-color: transparent;
-border: 1px solid $color-primary;
-padding: 8px 20px;
-}
-
+  &__to-cart {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    padding: 8px 20px;
+  }
 }
