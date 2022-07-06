@@ -17,12 +17,26 @@
   &__slider-thumb {
     max-width: 447px;
   }
+  &__slider-thumb-wrapper {
+    position: relative;
+    width: min-content;
+    margin: 0 auto;
+    .card__slider-thumb-scrollbar.swiper-scrollbar {
+      bottom: -10px;
+    }
+  }
+
   &__thumb-btn {
     width: 120px;
     height: 120px;
     background-color: transparent;
     border: none;
+    &_active {
+      outline: 2px solid $color-main;
+      outline-offset: -2px;
+    }
   }
+
   &__info {
     width: 100%;
     padding-top: 120px;
