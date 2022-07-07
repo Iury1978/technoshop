@@ -5,7 +5,7 @@
   &__container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
-    gap: 30px;
+    gap: 50px 30px;
   }
   &__logo-link {
     align-self: start;
@@ -43,7 +43,6 @@
   }
 
   &__item {
-
     margin-bottom: 15px;
     &_contact {
       margin-bottom: 21px;
@@ -51,9 +50,6 @@
     &:last-child {
       margin-bottom: 0;
     }
-    // &:nth-child(5) {
-    //   margin-bottom: 0;
-    // }
   }
 
   &__link {
@@ -61,5 +57,11 @@
     &:hover {
       color: $color-main;
     }
+  }
+  &_copyright {
+  }
+
+  &_author {
+    grid-column: 4/5;
   }
 }
