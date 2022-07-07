@@ -1,6 +1,10 @@
 .filter {
   padding-top: 78px;
   max-width: 340px;
+// временно
+  @include tablet {
+    display: none;
+  }
   &__form {
     position: relative;
   }
