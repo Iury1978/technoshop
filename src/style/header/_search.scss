@@ -1,8 +1,10 @@
 .search {
   width: 100%;
-  max-width: 818px;
   height: 50px;
   position: relative;
+  @include mobile {
+    height: 44px;
+  }
 
   &__input {
     width: 100%;
@@ -15,6 +17,9 @@
     line-height: 20px;
     padding-left: 24px;
     padding-right: 54px;
+    @include tablet {
+      padding-right: 44px;
+    }
   }
 
   &__button {
@@ -26,5 +31,8 @@
     background-color: transparent;
     //убрал отступ под лупой.
     line-height: 0;
+    @include mobile {
+      right: 15px;
+    }
   }
 }
