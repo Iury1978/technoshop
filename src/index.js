@@ -20,18 +20,53 @@ const pageURL = new URL(location);
 // +    это делаем строку числом
 const page = +pageURL.searchParams.get("page") || 1;
 
+// эта функция отностися к адаптиву.
+//  уменльшаем количство отображаемых страниц пагинации в мобильной версии с 6 на 4
+// так же делаем флаг
+let isMobile = false;
+
+
+const startPagination = () => {
+  if (window.innerWidth <= 560) {
+    pagination(paginationWrapper, 10, page, 4);
+    isMobile = true;
+  } else {
+    pagination(paginationWrapper, 10, page, 6);
+    isMobile = false;
+  }
+};
+
+// теперь вызываем
+try {
+  startPagination();
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 560 && !isMobile) {
+      pagination(paginationWrapper, 10, page, 4);
+      isMobile = true;
+    }
+    if (window.innerWidth > 560 && isMobile) {
+      pagination(paginationWrapper, 10, page, 6);
+      isMobile = false;
+    }
+  });
+} catch (error) {
+  console.warn(error);
+  console.warn("Это не главная страница");
+}
+
 // передаем 4 параметра: wrapper, pages, page, count
 // 1 paginationWrapper
 // 2. количество найденных страниц /сначала оно неизвестно, прсото ставлю 20
 // 3. текущий номер страницы
 // 4. сколько  страниц отображать в пагинации
 
-try {
-  pagination(paginationWrapper, 10, page, 6);
-} catch (error) {
-  console.warn(error);
-  console.warn("Это не главная страница");
-}
+// try {
+//   pagination(paginationWrapper, 10, page, 6);
+// } catch (error) {
+//   console.warn(error);
+//   console.warn("Это не главная страница");
+// }
 
 const thumbSwiper = new Swiper(".card__slider-thumb", {
   spaceBetween: 44,

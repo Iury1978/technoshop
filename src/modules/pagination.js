@@ -16,7 +16,15 @@ const createItemPagination = (hrefLink, textContent, active) => {
   return li;
 };
 
+
+// передаем 4 параметра: wrapper, pages, page, count
+// 1 paginationWrapper
+// 2. количество найденных страниц /сначала оно неизвестно, прсото ставлю 20
+// 3. текущий номер страницы
+// 4. сколько  страниц отображать в пагинации
 export const pagination = (wrapper, pages, page, count) => {
+  // обнуляем перед каждым вызовом
+  wrapper.textContent = '';
   // создаю список и присваиваю ему класс
   const paginationList = document.createElement("ul");
   paginationList.className = "pagination__list";

@@ -9,7 +9,8 @@ $color-grey: #6f6f6f;
 $desktop: 1600px;
 $laptop: 1200px;
 $tablet: 1000px;
-$mobile: 560px;
+$intermediate: 670px;
+$mobile: 563px;
 
 // mixin
 
@@ -27,6 +28,11 @@ $mobile: 560px;
 
 @mixin tablet {
   @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+@mixin intermediate {
+  @media (max-width: #{$intermediate}) {
     @content;
   }
 }

@@ -30,6 +30,7 @@
   &__flex {
     display: flex;
     gap: 10px;
+    justify-content: space-between;
 
     &_column {
       flex-direction: column;
@@ -46,6 +47,10 @@
     padding-right: 10px;
     height: 38px;
     border: 1px solid $color-primary;
+
+    @include laptop {
+      width: 145px;
+    }
 
     &_select {
       width: 100%;

@@ -3,6 +3,25 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(310px, 340px));
     gap: 40px 0px;
+
+    @include desktop {
+      gap: 20px 15px;
+      justify-content: space-evenly;
+    }
+    @include laptop {
+      grid-template-columns: repeat(auto-fill, 310px);
+      gap: 20px;
+      justify-content: space-evenly;
+    }
+    @include intermediate {
+      grid-template-columns: repeat(2, minmax(145px, 310px));
+      gap: 10px;
+      justify-content: space-evenly;
+    }
+    @include mobile {
+      grid-template-columns: repeat(auto-fill, 145px);
+      gap: 10px;
+      justify-content: space-evenly;
+    }
   }
- 
 }
