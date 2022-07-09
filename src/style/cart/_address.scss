@@ -1,12 +1,32 @@
 .address {
+  @include desktop {
+    max-width: 700px;
+  }
+  @include laptop {
+    max-width: 100%;
+  }
   &__title {
     margin-bottom: 30px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &__form {
     display: grid;
     grid-template-columns: repeat(3, 340px);
     gap: 30px;
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @include tablet {
+      gap: 10px;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -19,21 +39,29 @@
     padding-right: 10px;
     border: 1px solid $color-primary;
 
+    @include tablet {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
     &_btn {
       font-weight: 500;
       font-size: 16px;
       line-height: 20px;
       color: $color-secondary;
       background-color: $color-primary;
-      border: none;
+      border: 0;
     }
   }
 
   &__label-save {
-    max-width: 292px;
-    grid-column: 3 / 4;
-  }
-  &__label-check {
-    margin-right: 8px;
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    grid-column: -2;
   }
 }

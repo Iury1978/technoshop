@@ -22,7 +22,7 @@ const createItemPagination = (hrefLink, textContent, active) => {
 // 2. количество найденных страниц /сначала оно неизвестно, прсото ставлю 20
 // 3. текущий номер страницы
 // 4. сколько  страниц отображать в пагинации
-export const pagination = (wrapper, pages, page, count) => {
+ const pagination = (wrapper, pages, page, count) => {
   // обнуляем перед каждым вызовом
   wrapper.textContent = '';
   // создаю список и присваиваю ему класс
@@ -72,4 +72,28 @@ export const pagination = (wrapper, pages, page, count) => {
 
   // добавляю в нашу обертку
   wrapper.append(firstItem, paginationList, LastItem);
+};
+
+export const startPagination = (paginationWrapper, pages, page) => {
+  // так же делаем флаг
+  let isMobile = false;
+
+  if (window.innerWidth <= 560) {
+    pagination(paginationWrapper, pages, page, 4);
+    isMobile = true;
+  } else {
+    pagination(paginationWrapper, pages, page, 6);
+    isMobile = false;
+  }
+  //  уменльшаем количство отображаемых страниц пагинации в мобильной версии с 6 на 4
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 560 && !isMobile) {
+      pagination(paginationWrapper, pages, page, 4);
+      isMobile = true;
+    }
+    if (window.innerWidth > 560 && isMobile) {
+      pagination(paginationWrapper, pages, page, 6);
+      isMobile = false;
+    }
+  });
 };
