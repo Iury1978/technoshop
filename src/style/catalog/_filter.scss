@@ -1,12 +1,13 @@
 .filter {
   padding-top: 78px;
   max-width: 340px;
-// временно
+  // временно
   @include tablet {
     display: none;
   }
   &__form {
     position: relative;
+    
   }
   &__title {
     margin-bottom: 30px;
@@ -81,6 +82,13 @@
     font-size: 16px;
     line-height: 20px;
     border: none;
+    transition: background-color 0.4s ease-in-out;
+     &:hover{
+      background-color: $color-main;
+    }
+    &:active, &:focus{
+      background-color: $color-main-sub;
+    }
   }
 
   &__reset {
@@ -93,5 +101,9 @@
     color: $color-grey;
     background-color: transparent;
     border: none;
+    transition: color 0.4s ease-in-out;
+    &:hover {
+      color: $color-main-sub;
+    }
   }
 }

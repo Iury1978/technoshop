@@ -132,4 +132,12 @@
     font-size: 16px;
     line-height: 130%;
   }
+  &__design-link {
+    display: block;
+    align-self: flex-start;
+    transition: color 0.4s ease-in-out;
+    &:hover {
+      color: $color-main;
+    }
+  }
 }

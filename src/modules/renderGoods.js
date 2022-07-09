@@ -3,7 +3,7 @@ import { API_URI } from "./var";
 export const renderGoods = (wrapper, goods) => {
   wrapper.textContent = "";
   const cards = goods.map((item) => {
-    console.log(item);
+    // console.log(item);
 
     const li = document.createElement("li");
     li.className = 'goods__item"';
@@ -13,7 +13,7 @@ export const renderGoods = (wrapper, goods) => {
       <a href="card.html?id=${item.id}">
         <img class="goods-item__image" src="${API_URI + item.images.present}"
         alt="${item.title}">
-        <h3 class="goods-item__image">${item.title}</h3>
+        <h3 class="goods-item__title">${item.title}</h3>
       </a>
 
       <div class="goods-item__buy">
