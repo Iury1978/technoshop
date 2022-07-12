@@ -7,10 +7,12 @@ $color-grey-light: #cdcdcd;
 $color-grey: #6f6f6f;
 
 $desktop: 1600px;
+$desktop-intermediate: 1299px;
 $laptop: 1200px;
 $tablet: 1000px;
 $intermediate: 670px;
 $mobile: 563px;
+
 
 // mixin
 
@@ -19,7 +21,11 @@ $mobile: 563px;
     @content;
   }
 }
-
+@mixin desktop-intermediate {
+  @media (max-width: #{$desktop-intermediate}) {
+    @content;
+  }
+}
 @mixin laptop {
   @media (max-width: #{$laptop}) {
     @content;
@@ -41,4 +47,11 @@ $mobile: 563px;
   @media (max-width: #{$mobile}) {
     @content;
   }
+}
+
+
+@keyframes rotation {
+ to {
+  transform: rotate(360deg);
+ }
 }
