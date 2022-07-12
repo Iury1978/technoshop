@@ -217,8 +217,9 @@
     line-height: 24px;
     color: $color-secondary;
     background-color: $color-main;
-    border: none;
-
+transition: background-color 0.4s ease-in-out;
+    &:hover {
+      background-color: $color-primary;}
     @include desktop {
       width: 340px;
     }
