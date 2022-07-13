@@ -24,8 +24,7 @@
     &_start {
       transform: rotate(180deg);
     }
-    &_end {
-    }
+   
     &[href=""] {
       opacity: 0.3;
       pointer-events: none;
@@ -43,6 +42,7 @@
     transition: border-color 0.2s easy;
     &_active {
       border-color: $color-main;
+      pointer-events: none;
     }
   }
 }

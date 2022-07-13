@@ -11,7 +11,9 @@ export const renderRecommendedItems = (goods, id) => {
   ul.className = "swiper-wrapper";
 
   const cardsRecommended = goods.map((item) => {
+
     if (id != item.id) {
+
       const li = document.createElement("li");
       li.className = "swiper-slide";
       li.innerHTML = `
@@ -37,8 +39,8 @@ export const renderRecommendedItems = (goods, id) => {
       return li;
     }
   });
-
-  ul.append(...cardsRecommended);
+  const filteredData = cardsRecommended.filter((obj) => obj != undefined);
+  ul.append(...filteredData);
   recommendedCarusel.append(ul);
 
   new Swiper(".recommended__carusel", {
