@@ -1,7 +1,6 @@
-import Swiper, { Thumbs, Scrollbar } from "swiper";
+import Swiper from "swiper";
 // import Swiper styles
 import "swiper/css";
-import "swiper/css/scrollbar";
 
 import { API_URI } from "./var";
 
@@ -21,7 +20,7 @@ export const renderRecommendedItems = (goods, id) => {
         <a href="card.html?id=${item.id}">
           <img class="goods-item__image" src="${
             API_URI + item.images.present
-          }" alt="${item.title}">
+          }" alt="${item.title}" width=340 height=340>
           <h3 class="goods-item__title">${item.title}</h3>
         </a>
 
@@ -38,20 +37,15 @@ export const renderRecommendedItems = (goods, id) => {
       return li;
     }
   });
-  const swiperScrollBar = document.createElement("div");
-  swiperScrollBar.className = "swiper-scrollbar";
 
   ul.append(...cardsRecommended);
-  recommendedCarusel.append(ul, swiperScrollBar);
+  recommendedCarusel.append(ul);
 
   new Swiper(".recommended__carusel", {
     spaceBetween: 10,
     slidesPerView: 2,
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true,
-    },
-    modules: [Scrollbar],
+    autoHeight: true,
+    loop: true,
     breakpoints: {
       768: {
         spaceBetween: 20,
