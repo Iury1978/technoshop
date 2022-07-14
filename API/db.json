@@ -25,12 +25,8 @@
     "categoryRus": "Ноутбуки",
     "images": {
       "present": "img/31848036041.jpg",
-      "large": [
-        "img/31848036041-l.jpg"
-      ],
-      "small": [
-        "img/31848036041-s.jpg"
-      ]
+      "large": ["img/31848036041-l.jpg"],
+      "small": ["img/31848036041-s.jpg"]
     }
   },
   {
@@ -135,14 +131,8 @@
     "categoryRus": "Планшеты",
     "images": {
       "present": "img/14380352311.jpg",
-      "large": [
-        "img/14380352311-l.jpg",
-        "img/14380352312-l.jpg"
-      ],
-      "small": [
-        "img/14380352311-s.jpg",
-        "img/14380352312-s.jpg"
-      ]
+      "large": ["img/14380352311-l.jpg", "img/14380352312-l.jpg"],
+      "small": ["img/14380352311-s.jpg", "img/14380352312-s.jpg"]
     }
   },
   {
@@ -1204,12 +1194,8 @@
     "categoryRus": "ТВ-приставки",
     "images": {
       "present": "img/51717649991.jpg",
-      "large": [
-        "img/51717649991-l.jpg"
-      ],
-      "small": [
-        "img/51717649991-s.jpg"
-      ]
+      "large": ["img/51717649991-l.jpg"],
+      "small": ["img/51717649991-s.jpg"]
     }
   },
   {
@@ -1237,14 +1223,8 @@
     "categoryRus": "Электронная книга",
     "images": {
       "present": "img/92954458711.jpg",
-      "large": [
-        "img/92954458711-l.jpg",
-        "img/92954458712-l.jpg"
-      ],
-      "small": [
-        "img/92954458711-s.jpg",
-        "img/92954458712-s.jpg"
-      ]
+      "large": ["img/92954458711-l.jpg", "img/92954458712-l.jpg"],
+      "small": ["img/92954458711-s.jpg", "img/92954458712-s.jpg"]
     }
   },
   {
@@ -1463,12 +1443,8 @@
     "categoryRus": "ТВ-приставки",
     "images": {
       "present": "img/36944848201.jpg",
-      "large": [
-        "img/36944848201-l.jpg"
-      ],
-      "small": [
-        "img/36944848201-s.jpg"
-      ]
+      "large": ["img/36944848201-l.jpg"],
+      "small": ["img/36944848201-s.jpg"]
     }
   },
   {
@@ -1845,14 +1821,8 @@
     "categoryRus": "Моноблоки",
     "images": {
       "present": "img/23436256191.jpg",
-      "large": [
-        "img/23436256191-l.jpg",
-        "img/23436256192-l.jpg"
-      ],
-      "small": [
-        "img/23436256191-s.jpg",
-        "img/23436256192-s.jpg"
-      ]
+      "large": ["img/23436256191-l.jpg", "img/23436256192-l.jpg"],
+      "small": ["img/23436256191-s.jpg", "img/23436256192-s.jpg"]
     }
   }
 ]

@@ -15,21 +15,16 @@ import { getGoodsItem } from "./modules/goodsService";
 import { renderGoods } from "./modules/renderGoods";
 import { renderItem } from "./modules/renderItem";
 import { renderRecommendedItems } from "./modules/renderRecommendedItems";
+import { filter } from "./modules/filter";
 // теперь вызываем
 try {
   const goodsList = document.querySelector(".goods__list");
 
   if (goodsList) {
     const paginationWrapper = document.querySelector(".pagination");
-
-    // получаем URL параметры страницы
-    const pageURL = new URL(location);
-
-    // из URL получаем параметр текущей страницы page
-    // если параметра нет- задаем страницу 1
-
-    // +    это делаем строку числом
-    const page = +pageURL.searchParams.get("page") || 1;
+    // после пагинации
+    filter(goodsList, paginationWrapper);
+ 
     // вставляем прелоадер
     goodsList.innerHTML = `
   <div class= "goods__preload">
@@ -39,11 +34,10 @@ try {
 </div>
 `;
 
-    getGoods({ page }).then(({ goods, pages, page }) => {
+    getGoods().then(({ goods, pages, page }) => {
       renderGoods(goodsList, goods);
       startPagination(paginationWrapper, pages, page);
     });
-
   }
 } catch (error) {
   console.warn(error);
@@ -59,7 +53,6 @@ try {
 
     // +    это делаем строку числом
     const id = +pageURL.searchParams.get("id");
- 
 
     const preload = document.createElement("div");
     preload.className = "card__preload";
@@ -88,5 +81,3 @@ try {
   console.warn(error);
   console.warn("Это не страница товара");
 }
-
-

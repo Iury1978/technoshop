@@ -16,15 +16,14 @@ const createItemPagination = (hrefLink, textContent, active) => {
   return li;
 };
 
-
 // передаем 4 параметра: wrapper, pages, page, count
 // 1 paginationWrapper
 // 2. количество найденных страниц /сначала оно неизвестно, прсото ставлю 20
 // 3. текущий номер страницы
 // 4. сколько  страниц отображать в пагинации
- const pagination = (wrapper, pages, page, count) => {
+const pagination = (wrapper, pages, page, count) => {
   // обнуляем перед каждым вызовом
-  wrapper.textContent = '';
+  wrapper.textContent = "";
   // создаю список и присваиваю ему класс
   const paginationList = document.createElement("ul");
   paginationList.className = "pagination__list";
@@ -53,8 +52,12 @@ const createItemPagination = (hrefLink, textContent, active) => {
       }
     }
 
+    const url = new URL(location);
+
+    url.searchParams.set('page', n);
+ 
     //  создаем ли элементы с помощью функции
-    const li = createItemPagination(`index.html?page=${n}`, n, page === n);
+    const li = createItemPagination(url, n, page === n);
 
     // добавляем в ul наши li
     paginationList.append(li);
@@ -64,10 +67,12 @@ const createItemPagination = (hrefLink, textContent, active) => {
 
   const firstItem = document.createElement("a");
   firstItem.classList.add("pagination__arrow", "pagination__arrow_start");
+  firstItem.ariaLabel = "стрелка перехода на первую страницу";
   firstItem.href = isNotStart ? "index.html" : "";
 
   const LastItem = document.createElement("a");
   LastItem.classList.add("pagination__arrow", "pagination__arrow_end");
+  LastItem.ariaLabel = "стрелка перехода на последнюю страницу";
   LastItem.href = isEnd ? "" : `index.html?page=${pages}`;
 
   // добавляю в нашу обертку

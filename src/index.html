@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <!-- прелоад шрифтов  необходим -->
+  <link rel="preload" href="fonts/montserrat-v24-latin_cyrillic-500.woff2" type="font/woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/montserrat-v24-latin_cyrillic-700.woff2" type="font/woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/montserrat-v24-latin_cyrillic-regular.woff2" type="font/woff2" as="font" crossorigin>
   <title>Techno shop- Онлайн магазин </title>
 </head>
 
@@ -18,8 +21,11 @@
         <img src="img/logo.svg" alt="Логотип Techno Shop" class="header__logo">
       </a>
 
-      <form class="header__search search">
-        <input type="search" class="search__input">
+      <form action="/" class="header__search search">
+        <label aria-label="поиск по сайту">
+          <input type="search" class="search__input" name="search">
+        </label>
+
 
         <button class="search__button" aria-label="найти товар на сайте">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -69,10 +75,12 @@
                 <legend class="filter__field-title">Цена</legend>
 
                 <div class="filter__flex">
-                  <label aria-label="Нижняя граница цены"><input class="filter__input" type="number" name="price-start"
-                      placeholder="от"></label>
-                  <label aria-label="Верхняя граница цены"><input class="filter__input" type="number" name="price-end"
-                      placeholder="до"></label>
+                  <label aria-label="Нижняя граница цены">
+                    <input class="filter__input" type="number" name="minprice" step="any" placeholder="от">
+                  </label>
+                  <label aria-label="Верхняя граница цены">
+                    <input class="filter__input" type="number" name="maxprice" step="any" placeholder="до">
+                  </label>
                 </div>
               </fieldset>
 
@@ -81,13 +89,13 @@
 
 
                 <label aria-label="Выбор категории товара">
-                  <select class="filter__input_select" name="category">
-                    <option value="all" selected>все категории</option>
-                    <option value="phone">Смартфоны</option>
+                  <select class="filter__input_select" name="category" id="category">
+                    <option value="" selected>все категории</option>
+                    <!-- <option value="phone">Смартфоны</option>
                     <option value="tab">Планшеты</option>
                     <option value="clock">Умные часы</option>
                     <option value="monoblock">Моноблоки</option>
-                    <option value="notebook">Ноутбуки</option>
+                    <option value="notebook">Ноутбуки</option> -->
                   </select>
                 </label>
 
@@ -101,10 +109,13 @@
                 <legend class="filter__field-title">Диагональ</legend>
 
                 <div class="filter__flex">
-                  <label aria-label="Нижняя граница диагонали экрана"><input class="filter__input" type="number"
-                      name="diagonal-start" placeholder="от"></label>
-                  <label aria-label="Верхняя граница диагонали экрана"><input class="filter__input" type="number"
-                      name="diagonal-end" placeholder="до"></label>
+                  <label aria-label="Нижняя граница диагонали экрана">
+                    <input class="filter__input" type="number" name="mindisplay" step="any" placeholder="от">
+
+                  </label>
+                  <label aria-label="Верхняя граница диагонали экрана">
+                    <input class="filter__input" type="number" name="maxdisplay" step="any" placeholder="до">
+                  </label>
                 </div>
               </fieldset>
 
@@ -261,10 +272,11 @@
           </li>
         </ul>
       </div>
-      <p class="footer_copyright">© TechnoSHOP, 2022</p>
+      <p class="footer__copyright">© TechnoSHOP, 2022</p>
       <div class="footer__design">
         <p>Design by Anastasia&nbsp;Ilina</p>
-        <a class="footer__design-link" href="https://t.me/@Mrshmallowww" aria-label="написать в Телеграм">@Mrshmallowww</a>
+        <a class="footer__design-link" href="https://t.me/@Mrshmallowww"
+          aria-label="написать в Телеграм">@Mrshmallowww</a>
       </div>
 
     </div>
